@@ -75,4 +75,8 @@ type AuctionRepositoryInterface interface {
 
 	FindAuctionById(
 		ctx context.Context, id string) (*Auction, *internal_error.InternalError)
+
+	CloseExpiredAuctions(
+		ctx context.Context,
+		auctionInterval time.Duration) *internal_error.InternalError
 }
